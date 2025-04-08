@@ -6,11 +6,11 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Récupération des variables d'environnement (configurables via Heroku ou localement)
-const CLIENT_ID = "ataf650dw2v0b5oh4s2sgh7h"; //process.env.CLIENT_ID;
-const CLIENT_SECRET = "q1Ig1QQPX4giDUXHyTmnyG5Y"; //process.env.CLIENT_SECRET;
-const AUTH_URI = "https://mcjnmn9mfnxq4m36wvmtt59plqg1.auth.marketingcloudapis.com/";   // process.env.AUTH_URI
-const REST_URI = "https://mcjnmn9mfnxq4m36wvmtt59plqg1.rest.marketingcloudapis.com/";   // process.env.REST_URI
-const DE_KEY = "5FC49EC4-BB94-449D-94FF-170C753F309F";       // Nom ou clé de la Data Extension, ici "SMS_journey" / process.env.DE_KEY
+const CLIENT_ID = process.env.CLIENT_ID;
+const CLIENT_SECRET = process.env.CLIENT_SECRET;
+const AUTH_URI = process.env.AUTH_URI; // "https://mcjnmn9mfnxq4m36wvmtt59plqg1.auth.marketingcloudapis.com/";   
+const REST_URI =  process.env.REST_URI; //"https://mcjnmn9mfnxq4m36wvmtt59plqg1.rest.marketingcloudapis.com/";  
+const DE_KEY = process.env.DE_KEY;       // Nom ou clé de la Data Extension, ici "SMS_journey" / 
 
 app.use(bodyParser.json());
 app.use(express.static("public")); // Pour servir les fichiers statiques (index.html, js, etc.)
