@@ -67,6 +67,24 @@ app.post("/execute", async (req, res) => {
   }
 });
 
+// Endpoint pour sauvegarder la configuration
+app.post("/save", (req, res) => {
+  console.log("Save endpoint called");
+  res.status(200).json({ success: true });
+});
+
+// Endpoint pour la publication
+app.post("/publish", (req, res) => {
+  console.log("Publish endpoint called");
+  res.status(200).json({ success: true });
+});
+
+// Endpoint pour la validation
+app.post("/validate", (req, res) => {
+  console.log("Validate endpoint called");
+  res.status(200).json({ success: true });
+});
+
 // Vérification de base du fonctionnement du serveur
 app.get("/", (req, res) => {
   res.send("Serveur backend pour Custom Activity est opérationnel !");
