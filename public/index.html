@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>SMS Journey Config</title>
+
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/require.js"></script>
+  <script type="text/javascript">
+    (function () {
+      var config = {
+        baseUrl: "",
+      };
+
+      var dependencies = ["customActivity"];
+
+      require(config, dependencies);
+    })();
+  </script>
+
+  <style>
+    body {
+      padding: 15px;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .step {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input {
+      width: 100%;
+      padding: 6px;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="step" id="step1">
+    <h1>Step 1: Contact Email</h1>
+    <label for="input-email">Email</label>
+    <input type="text" id="input-email" placeholder="{{Event.EventKey.EmailAddress}}" />
+  </div>
+
+  <div class="step" id="step2">
+    <h1>Step 2: Phone Number</h1>
+    <label for="input-phone">Phone</label>
+    <input type="text" id="input-phone" placeholder="{{Event.EventKey.MobileNumber}}" />
+  </div>
+
+  <div class="step" id="step3">
+    <h1>Step 3: Contact Date</h1>
+    <label for="input-date">Date</label>
+    <input type="date" id="input-date" />
+  </div>
+</body>
+</html>
