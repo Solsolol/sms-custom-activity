@@ -1,64 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="utf-8" />
-  <title>SMS Journey Config</title>
-
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/require.js"></script>
-  <script type="text/javascript">
-    (function () {
-      var config = {
-        baseUrl: "",
-      };
-
-      var dependencies = ["customActivity"];
-
-      require(config, dependencies);
-    })();
-  </script>
-
-  <style>
-    body {
-      padding: 15px;
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-    h1 {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-    .step {
-      margin-bottom: 20px;
-    }
-    label {
-      display: block;
-      margin-top: 10px;
-    }
-    input {
-      width: 100%;
-      padding: 6px;
-      margin-top: 4px;
-    }
-  </style>
+    <title>Custom SMS Activity</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/design-system/2.13.7/styles/salesforce-lightning-design-system.min.css">
+    
+    <!-- Required SFMC SDK scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/postmonger/0.0.14/postmonger.min.js"></script>
+    <script type="text/javascript" src="js/customActivity.js"></script>
 </head>
 <body>
-  <div class="step" id="step1">
-    <h1>Step 1: Contact Email</h1>
-    <label for="input-email">Email</label>
-    <input type="text" id="input-email" placeholder="{{Event.EventKey.EmailAddress}}" />
-  </div>
-
-  <div class="step" id="step2">
-    <h1>Step 2: Phone Number</h1>
-    <label for="input-phone">Phone</label>
-    <input type="text" id="input-phone" placeholder="{{Event.EventKey.MobileNumber}}" />
-  </div>
-
-  <div class="step" id="step3">
-    <h1>Step 3: Contact Date</h1>
-    <label for="input-date">Date</label>
-    <input type="date" id="input-date" />
-  </div>
+    <div id="step1" class="step">
+        <div class="slds-form-element">
+            <label class="slds-form-element__label">Message</label>
+            <div class="slds-form-element__control">
+                <textarea id="messageInput" class="slds-textarea"></textarea>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
